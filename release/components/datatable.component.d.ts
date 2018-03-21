@@ -212,6 +212,14 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      */
     virtualization: boolean;
     /**
+     * A flag for switching summary row on / off
+     */
+    summaryRow: boolean;
+    /**
+     * A property holds a summary row position: top/bottom
+     */
+    summaryPosition: string;
+    /**
      * Tree from relation
      */
     treeFromRelation: string;
@@ -469,7 +477,8 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      */
     onBodySelect(event: any): void;
     /**
-     * A row was expanded ot collapsed for tree
+     * A row was expanded or collapsed for tree
      */
     onTreeAction(event: any): void;
+    private sortInternalRows();
 }

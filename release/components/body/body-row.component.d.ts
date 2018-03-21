@@ -1,5 +1,6 @@
 import { ElementRef, KeyValueDiffers, EventEmitter, ChangeDetectorRef, DoCheck } from '@angular/core';
 import { ScrollbarHelper } from '../../services';
+import { TreeStatus } from '../../index';
 export declare class DataTableBodyRowComponent implements DoCheck {
     private differs;
     private scrollbarHelper;
@@ -13,7 +14,7 @@ export declare class DataTableBodyRowComponent implements DoCheck {
     isSelected: boolean;
     rowIndex: number;
     displayCheck: any;
-    treeStatus: 'loading' | 'expanded' | 'collapsed';
+    treeStatus: TreeStatus;
     offsetX: number;
     readonly cssClass: string;
     rowHeight: number;

@@ -18,7 +18,6 @@ var DataTableBodyRowComponent = /** @class */ (function () {
         this.differs = differs;
         this.scrollbarHelper = scrollbarHelper;
         this.cd = cd;
-        // loading, expanded, collapsed
         this.treeStatus = 'collapsed';
         this.activate = new core_1.EventEmitter();
         this.treeAction = new core_1.EventEmitter();

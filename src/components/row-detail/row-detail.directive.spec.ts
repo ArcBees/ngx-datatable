@@ -63,7 +63,7 @@ describe('DatatableRowDetailDirective', () => {
     
     beforeEach(() => {
       directive = fixture.debugElement
-        .query(By.css("#t1"))
+        .query(By.css('#t1'))
         .injector.get(DatatableRowDetailDirective);
     });
 
@@ -82,7 +82,7 @@ describe('DatatableRowDetailDirective', () => {
     
     beforeEach(() => {
       directive = fixture.debugElement
-        .query(By.css("#t2"))
+        .query(By.css('#t2'))
         .injector.get(DatatableRowDetailDirective);
     });
 

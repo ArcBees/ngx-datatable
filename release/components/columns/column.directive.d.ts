@@ -19,11 +19,11 @@ export declare class DataTableColumnDirective {
     headerCheckboxable: boolean;
     headerClass: string | ((data: any) => string | any);
     cellClass: string | ((data: any) => string | any);
+    summaryFunc: (cells: any[]) => any;
+    summaryTemplate: TemplateRef<any>;
     isTreeColumn: boolean;
+    treeLevelIndent: number;
     cellTemplate: TemplateRef<any>;
     headerTemplate: TemplateRef<any>;
-    treeExpanderTemplate: TemplateRef<any>;
-    treeCollapserTemplate: TemplateRef<any>;
-    treeLoaderTemplate: TemplateRef<any>;
-    treeDisableTemplate: TemplateRef<any>;
+    treeIconTemplate: TemplateRef<any>;
 }

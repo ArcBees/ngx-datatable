@@ -1,9 +1,10 @@
 import { ChangeDetectorRef, EventEmitter, ElementRef, ViewContainerRef, OnDestroy, DoCheck } from '@angular/core';
 import { SortDirection } from '../../types';
 import { TableColumn } from '../../types/table-column.type';
+export declare type TreeStatus = 'collapsed' | 'expanded' | 'loading' | 'disabled';
 export declare class DataTableBodyCellComponent implements DoCheck, OnDestroy {
     private cd;
-    displayCheck: any;
+    displayCheck: (row: any, column?: TableColumn, value?: any) => boolean;
     group: any;
     rowHeight: number;
     isSelected: boolean;
@@ -12,9 +13,9 @@ export declare class DataTableBodyCellComponent implements DoCheck, OnDestroy {
     column: TableColumn;
     row: any;
     sorts: any[];
-    treeStatus: string;
+    treeStatus: TreeStatus;
     activate: EventEmitter<any>;
-    treeActionClick: EventEmitter<any>;
+    treeAction: EventEmitter<any>;
     cellTemplate: ViewContainerRef;
     readonly columnCssClasses: any;
     readonly width: number;
