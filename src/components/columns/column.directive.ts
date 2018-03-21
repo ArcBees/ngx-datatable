@@ -1,6 +1,9 @@
 import { Directive, TemplateRef, ContentChild, Input } from '@angular/core';
 import { DataTableColumnHeaderDirective } from './column-header.directive';
 import { DataTableColumnCellDirective } from './column-cell.directive';
+import {
+  DataTableColumnCellTreeIcon
+} from './tree.directive';
 import { TableColumnProp } from '../../types';
 
 @Directive({ selector: 'ngx-datatable-column' })
@@ -24,13 +27,18 @@ export class DataTableColumnDirective {
   @Input() headerCheckboxable: boolean;
   @Input() headerClass: string | ((data: any) => string|any);
   @Input() cellClass: string | ((data: any) => string|any);
+  @Input() isTreeColumn: boolean;
+  @Input() treeLevelIndent: number;
 
   @Input()
-  @ContentChild(DataTableColumnCellDirective, { read: TemplateRef }) 
+  @ContentChild(DataTableColumnCellDirective, { read: TemplateRef })
   cellTemplate: TemplateRef<any>;
 
   @Input()
-  @ContentChild(DataTableColumnHeaderDirective, { read: TemplateRef }) 
+  @ContentChild(DataTableColumnHeaderDirective, { read: TemplateRef })
   headerTemplate: TemplateRef<any>;
 
+  @Input()
+  @ContentChild(DataTableColumnCellTreeIcon, { read: TemplateRef })
+  treeIconTemplate: TemplateRef<any>;
 }
