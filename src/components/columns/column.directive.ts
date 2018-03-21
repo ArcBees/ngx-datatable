@@ -1,6 +1,7 @@
 import { Directive, TemplateRef, ContentChild, Input } from '@angular/core';
 import { DataTableColumnHeaderDirective } from './column-header.directive';
 import { DataTableColumnCellDirective } from './column-cell.directive';
+import { DataTableColumnCellTreeIcon } from './tree.directive';
 import { TableColumnProp } from '../../types';
 
 @Directive({ selector: 'ngx-datatable-column' })
@@ -26,6 +27,8 @@ export class DataTableColumnDirective {
   @Input() cellClass: string | ((data: any) => string|any);
   @Input() summaryFunc: (cells: any[]) => any;
   @Input() summaryTemplate: TemplateRef<any>;
+  @Input() isTreeColumn: boolean;
+  @Input() treeLevelIndent: number;
 
   @Input()
   @ContentChild(DataTableColumnCellDirective, { read: TemplateRef })
@@ -35,4 +38,7 @@ export class DataTableColumnDirective {
   @ContentChild(DataTableColumnHeaderDirective, { read: TemplateRef })
   headerTemplate: TemplateRef<any>;
 
+  @Input()
+  @ContentChild(DataTableColumnCellTreeIcon, { read: TemplateRef })
+  treeIconTemplate: TemplateRef<any>;
 }
