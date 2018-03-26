@@ -78,6 +78,7 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
         [selectCheck]="selectCheck"
         [displayCheck]="displayCheck"
         [summaryRow]="summaryRow"
+        [summaryHeight]="summaryHeight"
         [summaryPosition]="summaryPosition"
         (page)="onBodyPage($event)"
         (activate)="activate.emit($event)"
@@ -443,6 +444,11 @@ export class DatatableComponent implements OnInit, DoCheck, AfterViewInit {
    * A flag for switching summary row on / off
    */
   @Input() summaryRow: boolean = false;
+
+  /**
+   * A height of summary row
+   */
+  @Input() summaryHeight: number = this.rowHeight;
 
   /**
    * A property holds a summary row position: top/bottom
