@@ -40,7 +40,9 @@ var DataTableSummaryRowComponent = /** @class */ (function () {
     DataTableSummaryRowComponent.prototype.updateValues = function () {
         var _this = this;
         this.summaryRow = {};
-        this.columns.forEach(function (col) {
+        this.columns
+            .filter(function (col) { return !col.summaryTemplate; })
+            .forEach(function (col) {
             var cellsFromSingleColumn = _this.rows.map(function (row) { return row[col.prop]; });
             var sumFunc = col.summaryFunc || defaultSumFunc;
             _this.summaryRow[col.prop] = col.pipe ?

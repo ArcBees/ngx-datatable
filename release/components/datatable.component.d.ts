@@ -216,6 +216,10 @@ export declare class DatatableComponent implements OnInit, DoCheck, AfterViewIni
      */
     summaryRow: boolean;
     /**
+     * A height of summary row
+     */
+    summaryHeight: number;
+    /**
      * A property holds a summary row position: top/bottom
      */
     summaryPosition: string;

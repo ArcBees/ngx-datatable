@@ -27,6 +27,7 @@ export declare class DataTableBodyComponent implements OnInit, OnDestroy {
     virtualization: boolean;
     summaryRow: boolean;
     summaryPosition: string;
+    summaryHeight: number;
     pageSize: number;
     rows: any[];
     columns: any[];
